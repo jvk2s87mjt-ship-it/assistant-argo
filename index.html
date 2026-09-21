@@ -14,22 +14,18 @@
         --dark-red: #991b1b;
         --line: rgba(255,255,255,0.14);
         --text: #edf2f7;
-        --green: #34d399;
       }
       * { box-sizing: border-box; }
       html, body {
-        margin: 0;
-        min-height: 100vh;
+        margin: 0; min-height: 100vh;
         background: radial-gradient(circle at 70% 15%, rgba(239,68,68,0.12), transparent 26%), linear-gradient(135deg, var(--bg), var(--bg-2));
-        color: var(--text);
-        font-family: Arial, sans-serif;
+        color: var(--text); font-family: Arial, sans-serif;
       }
       body { overflow: hidden; }
       button, input, select, textarea { font: inherit; }
 
       .date-time {
-        position: fixed; top: 22px; right: 24px; z-index: 20;
-        color: var(--red); text-align: right;
+        position: fixed; top: 22px; right: 24px; z-index: 20; color: var(--red); text-align: right;
       }
       .date-time .date { display: block; font-size: 17px; text-transform: capitalize; }
       .date-time .time { display: block; font-size: 29px; font-weight: 700; }
@@ -42,21 +38,16 @@
         display: block; color: var(--red); font-size: 28px; font-weight: 800; letter-spacing: 3px; text-shadow: 0 0 12px rgba(239,68,68,0.65);
       }
 
-      .top-line {
-        position: fixed; left: 0; right: 0; top: 110px; border-top: 1px solid rgba(255,255,255,0.35);
-      }
+      .top-line { position: fixed; left: 0; right: 0; top: 110px; border-top: 1px solid rgba(255,255,255,0.35); }
 
       .sidebar {
-        position: fixed; top: 110px; left: 0; bottom: 0; width: 220px;
-        padding: 18px 14px; background: rgba(15,23,42,0.45); border-right: 1px solid rgba(255,255,255,0.35);
+        position: fixed; top: 110px; left: 0; bottom: 0; width: 220px; padding: 18px 14px;
+        background: rgba(15,23,42,0.45); border-right: 1px solid rgba(255,255,255,0.35);
       }
-      .applications-title {
-        margin: 0 0 12px 4px; color: #dfe9f7; font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-      }
+      .applications-title { margin: 0 0 12px 4px; color: #dfe9f7; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
       .app-item {
-        display: flex; align-items: center; gap: 12px; width: 100%; margin-bottom: 10px; padding: 13px 12px;
-        border-radius: 10px; border: 1px solid rgba(239,68,68,0.6); background: rgba(239,68,68,0.16); color: white; cursor: pointer;
-        transition: 0.25s ease;
+        display: flex; align-items: center; gap: 12px; width: 100%; margin-bottom: 10px; padding: 13px 12px; border-radius: 10px;
+        border: 1px solid rgba(239,68,68,0.6); background: rgba(239,68,68,0.16); color: white; cursor: pointer; transition: 0.25s ease;
       }
       .app-item:hover { transform: translateX(5px); background: rgba(239,68,68,0.26); }
       .app-icon {
@@ -71,221 +62,103 @@
       }
       .beta-version { margin-top: 6px; color: #fca5a5; font-size: 10px; letter-spacing: 1px; text-align: center; }
 
-      .main-content {
-        min-height: 100vh; padding-top: 160px; padding-left: 240px; display: flex; align-items: center; justify-content: center;
-      }
+      .main-content { min-height: 100vh; padding-top: 160px; padding-left: 240px; display: flex; align-items: center; justify-content: center; }
       .welcome-box {
-        width: min(440px, 80vw); min-height: 220px; padding: 32px; text-align: center;
-        border: 1px solid rgba(255,255,255,0.25); border-radius: 18px; background: rgba(255,255,255,0.08);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+        width: min(440px, 80vw); min-height: 220px; padding: 32px; text-align: center; border: 1px solid rgba(255,255,255,0.25); border-radius: 18px; background: rgba(255,255,255,0.08); box-shadow: 0 20px 60px rgba(0,0,0,0.35);
       }
       .welcome-box h1 { margin: 0; font-size: clamp(28px, 5vw, 50px); font-weight: 400; }
       .welcome-box .argo { display: block; margin-top: 8px; color: var(--red); letter-spacing: 3px; font-weight: 800; }
       .welcome-box p { margin: 16px 0 0; color: var(--muted); line-height: 1.6; }
 
       .window {
-        position: fixed; z-index: 30; top: 126px; left: 250px; width: min(660px, calc(100vw - 280px));
-        max-height: calc(100vh - 150px); display: none; flex-direction: column; border-radius: 18px;
-        border: 1px solid rgba(239,68,68,0.5); background: var(--panel); box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+        position: fixed; z-index: 30; top: 126px; left: 250px; width: min(660px, calc(100vw - 280px)); max-height: calc(100vh - 150px); display: none; flex-direction: column; border-radius: 18px; border: 1px solid rgba(239,68,68,0.5); background: var(--panel); box-shadow: 0 25px 70px rgba(0,0,0,0.6);
       }
       .window.active { display: flex; }
-      .window.small {
-        width: min(468px, calc(100vw - 280px)); max-height: calc(100vh - 170px);
-      }
-      .panel-header {
-        display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid rgba(255,255,255,0.08);
-        background: rgba(255,255,255,0.03);
-      }
+      .window.small { width: min(468px, calc(100vw - 280px)); max-height: calc(100vh - 170px); }
+      .panel-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); }
       .panel-header h2 { margin: 0; font-size: 17px; }
       .close-button {
         width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.14); color: white; background: rgba(255,255,255,0.06); cursor: pointer;
       }
       .close-button:hover { color: var(--red); transform: rotate(90deg); }
 
-      .chat-messages {
-        flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 18px;
-      }
+      .chat-messages { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 18px; }
       .chat-messages::-webkit-scrollbar { width: 6px; }
       .chat-messages::-webkit-scrollbar-thumb { background: rgba(239,68,68,0.7); border-radius: 10px; }
-      .message {
-        max-width: 78%; padding: 12px 14px; border-radius: 14px; line-height: 1.5; font-size: 14px;
-      }
-      .message.assistant {
-        align-self: flex-start; border: 1px solid rgba(239,68,68,0.24); background: rgba(239,68,68,0.12); border-top-left-radius: 5px;
-      }
-      .message.user {
-        align-self: flex-end; background: linear-gradient(135deg, #b91c1c, #7f1d1d); border-top-right-radius: 5px;
-      }
-      .message strong {
-        display: block; margin-bottom: 4px; color: #fca5a5; font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
-      }
-      .assistant-selector {
-        display: flex; align-items: center; gap: 9px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); color: #dfe9f7; font-size: 11px;
-      }
-      .assistant-selector select {
-        padding: 6px 8px; border: 1px solid rgba(239,68,68,0.5); border-radius: 7px; background: #1e293b; color: white;
-      }
-      .chat-form {
-        display: flex; gap: 8px; padding: 12px; border-top: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02);
-      }
-      .chat-form input {
-        flex: 1; min-width: 0; padding: 11px 12px; border-radius: 9px; border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.06); color: white; outline: none;
-      }
-      .chat-form button, .primary-btn {
-        padding: 0 16px; border: none; border-radius: 9px; background: #991b1b; color: white; cursor: pointer;
-      }
+      .message { max-width: 78%; padding: 12px 14px; border-radius: 14px; line-height: 1.5; font-size: 14px; }
+      .message.assistant { align-self: flex-start; border: 1px solid rgba(239,68,68,0.24); background: rgba(239,68,68,0.12); border-top-left-radius: 5px; }
+      .message.user { align-self: flex-end; background: linear-gradient(135deg, #b91c1c, #7f1d1d); border-top-right-radius: 5px; }
+      .message strong { display: block; margin-bottom: 4px; color: #fca5a5; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+      .assistant-selector { display: flex; align-items: center; gap: 9px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); color: #dfe9f7; font-size: 11px; }
+      .assistant-selector select { padding: 6px 8px; border: 1px solid rgba(239,68,68,0.5); border-radius: 7px; background: #1e293b; color: white; }
+      .chat-form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); }
+      .chat-form input { flex: 1; min-width: 0; padding: 11px 12px; border-radius: 9px; border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.06); color: white; outline: none; }
+      .chat-form button, .primary-btn { padding: 0 16px; border: none; border-radius: 9px; background: #991b1b; color: white; cursor: pointer; }
       .card { padding: 18px; }
-      .calc-display {
-        width: 100%; margin-bottom: 12px; padding: 12px; border: 1px solid rgba(239,68,68,0.5); border-radius: 9px; background: #020617;
-        color: #fca5a5; text-align: right; font-size: 22px;
-      }
+      .calc-display { width: 100%; margin-bottom: 12px; padding: 12px; border: 1px solid rgba(239,68,68,0.5); border-radius: 9px; background: #020617; color: #fca5a5; text-align: right; font-size: 22px; }
       .calc-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 7px; }
-      .calc-grid button {
-        min-height: 38px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: rgba(255,255,255,0.07); color: white; cursor: pointer;
-      }
+      .calc-grid button { min-height: 38px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: rgba(255,255,255,0.07); color: white; cursor: pointer; }
       .calc-grid button:last-child { background: var(--dark-red); }
-      .notes-area {
-        width: 100%; min-height: 260px; resize: vertical; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.05); color: white;
-      }
-      .files-box {
-        display: flex; flex-direction: column; gap: 12px; padding: 16px;
-      }
-      .drop-zone {
-        display: flex; align-items: center; justify-content: center; min-height: 115px; border: 1px dashed rgba(239,68,68,0.6); border-radius: 12px;
-        background: rgba(239,68,68,0.08); color: #fca5a5; text-align: center; cursor: pointer;
-      }
+      .notes-area { width: 100%; min-height: 260px; resize: vertical; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.05); color: white; }
+      .files-box { display: flex; flex-direction: column; gap: 12px; padding: 16px; }
+      .drop-zone { display: flex; align-items: center; justify-content: center; min-height: 115px; border: 1px dashed rgba(239,68,68,0.6); border-radius: 12px; background: rgba(239,68,68,0.08); color: #fca5a5; text-align: center; cursor: pointer; }
       .drop-zone input { display: none; }
       .file-list { display: flex; flex-direction: column; gap: 8px; max-height: 260px; overflow-y: auto; }
-      .file-item {
-        display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04);
-      }
+      .file-item { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); }
       .file-name { font-size: 12px; word-break: break-word; }
       .file-actions { display: flex; gap: 6px; }
-      .file-actions button {
-        border: 0; border-radius: 6px; padding: 6px 8px; background: rgba(255,255,255,0.08); color: white; cursor: pointer;
-      }
+      .file-actions button { border: 0; border-radius: 6px; padding: 6px 8px; background: rgba(255,255,255,0.08); color: white; cursor: pointer; }
 
-      .auth-shell {
-        position: fixed; inset: 0; display: grid; place-items: center; background: rgba(0,0,0,0.7); z-index: 99;
-      }
-      .auth-card {
-        width: min(420px, 90vw); border-radius: 16px; padding: 26px 22px; background: rgba(15,23,42,0.96); border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 30px 80px rgba(0,0,0,0.45); 
-      }
+      .auth-shell { position: fixed; inset: 0; display: grid; place-items: center; background: rgba(0,0,0,0.7); z-index: 99; }
+      .auth-card { width: min(420px, 90vw); border-radius: 16px; padding: 26px 22px; background: rgba(15,23,42,0.96); border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 30px 80px rgba(0,0,0,0.45); }
       .auth-card h2 { margin: 0 0 18px; font-size: 28px; color: var(--red); }
-      .auth-card input {
-        width: 100%; margin-bottom: 12px; padding: 11px 12px; border-radius: 9px; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.05); color: white; outline: none;
-      }
-      .auth-card button {
-        width: 100%; margin-top: 4px; padding: 12px; border: 0; border-radius: 9px; background: var(--dark-red); color: white; cursor: pointer;
-      }
-      .auth-row {
-        display: flex; justify-content: center; gap: 8px; margin-top: 16px; color: #cdd8ea; font-size: 13px;
-      }
-      .auth-row button {
-        width: auto; padding: 0; background: transparent; color: #fca5a5; border: none; text-decoration: underline; 
-      }
+      .auth-card input { width: 100%; margin-bottom: 12px; padding: 11px 12px; border-radius: 9px; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.05); color: white; outline: none; }
+      .auth-card button { width: 100%; margin-top: 4px; padding: 12px; border: 0; border-radius: 9px; background: var(--dark-red); color: white; cursor: pointer; }
+      .auth-row { display: flex; justify-content: center; gap: 8px; margin-top: 16px; color: #cdd8ea; font-size: 13px; }
+      .auth-row button { width: auto; padding: 0; background: transparent; color: #fca5a5; border: none; text-decoration: underline; }
       .auth-status { min-height: 18px; margin-top: 8px; color: #fca5a5; font-size: 12px; }
       .hidden { display: none !important; }
 
-      .modal {
-        position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,0.7); z-index: 50;
-      }
+      .modal { position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,0.7); z-index: 50; }
       .modal.active { display: grid; }
-      .modal-card { width: min(420px, 90vw); padding: 26px 22px; border-radius: 12px; background: #1e293b; border: 1px solid rgba(255,255,255,0.2); }
+      .modal-card { width: min(420px, 90vw); padding: 26px 22px; border-radius: 12px; background: #1e293b; border: 1px solid rgba(255,255,255,0.2); position: relative; }
       .modal-card h3 { margin: 0 0 12px; color: var(--red); }
       .modal-card p { margin: 8px 0; }
       .modal-close { position: absolute; right: 12px; top: 8px; border: none; background: transparent; color: white; font-size: 28px; cursor: pointer; }
 
-      @media (max-width: 720px) {
-        body { overflow: auto; }
-        .sidebar { width: 150px; }
-        .main-content { padding-left: 160px; }
-        .window { left: 155px; right: 8px; width: calc(100vw - 170px); }
-        .window.small { left: 155px; width: calc(100vw - 170px); }
-      }
+      @media (max-width: 720px) { body { overflow: auto; } .sidebar { width: 150px; } .main-content { padding-left: 160px; } .window { left: 155px; right: 8px; width: calc(100vw - 170px); } .window.small { left: 155px; width: calc(100vw - 170px); } }
     </style>
   </head>
   <body>
-    <div class="date-time">
-      <span class="date" id="date"></span>
-      <span class="time" id="time"></span>
-    </div>
-
-    <div class="brand">
-      <span class="label">ASYSTENT</span>
-      <span class="name">ARGO</span>
-    </div>
-
+    <div class="date-time"><span class="date" id="date"></span><span class="time" id="time"></span></div>
+    <div class="brand"><span class="label">ASYSTENT</span><span class="name">ARGO</span></div>
     <div class="top-line"></div>
 
     <aside class="sidebar">
       <div class="applications-title">Aplikacje</div>
-
       <button class="app-item" data-window="chat"><span class="app-icon">C</span><span class="app-name">Czat</span></button>
       <button class="app-item" data-window="calc"><span class="app-icon">∑</span><span class="app-name">Kalkulator</span></button>
       <button class="app-item" data-window="files"><span class="app-icon">F</span><span class="app-name">Magazyn</span></button>
       <button class="app-item" data-window="calendar"><span class="app-icon">K</span><span class="app-name">Kalendarz</span></button>
-
-      <div class="distribution-wrap">
-        <button class="distribution-button" id="distribution">Dystrybucja</button>
-        <div class="beta-version">V 2.5 BETA</div>
-      </div>
+      <div class="distribution-wrap"><button class="distribution-button" id="distribution">Dystrybucja</button><div class="beta-version">V 2.5 BETA</div></div>
     </aside>
 
     <main class="main-content">
-      <section class="welcome-box">
-        <h1>Witaj w asystencie<span class="argo">ARGO</span></h1>
-        <p>Twoje centrum pracy, planowania, notatek i danych. Zaloguj się, aby przechowywać wszystko w chmurze.</p>
-      </section>
+      <section class="welcome-box"><h1>Witaj w asystencie<span class="argo">ARGO</span></h1><p>Twoje centrum pracy, planowania, notatek i danych. Zaloguj się, aby przechowywać wszystko w chmurze.</p></section>
     </main>
 
     <section class="window active" id="chat">
-      <div class="panel-header">
-        <h2>Asystent ARGO</h2>
-        <button class="close-button" data-close="chat" aria-label="Zamknij">×</button>
-      </div>
+      <div class="panel-header"><h2>Asystent ARGO</h2><button class="close-button" data-close="chat" aria-label="Zamknij">×</button></div>
       <div class="assistant-selector">Rodzaj asystenta: <select><option>ARGO DOCTUS</option></select></div>
-      <div class="chat-messages" id="chatMessages">
-        <div class="message assistant"><strong>ARGO DOCTUS</strong>Witaj. Jestem gotowy do pomocy w planowaniu, organizacji i analizie zadań.</div>
-      </div>
-      <form class="chat-form" id="chatForm">
-        <input id="chatInput" maxlength="400" placeholder="Napisz wiadomość..." autocomplete="off" />
-        <button type="submit">Wyślij</button>
-      </form>
+      <div class="chat-messages" id="chatMessages"><div class="message assistant"><strong>ARGO DOCTUS</strong>Witaj. Jestem gotowy do pomocy w planowaniu, organizacji i analizie zadań.</div></div>
+      <form class="chat-form" id="chatForm"><input id="chatInput" maxlength="400" placeholder="Napisz wiadomość..." autocomplete="off" /><button type="submit">Wyślij</button></form>
     </section>
 
-    <section class="window small" id="calc">
-      <div class="panel-header"><h2>Kalkulator ARGO</h2><button class="close-button" data-close="calc">×</button></div>
-      <div class="card">
-        <input class="calc-display" id="calcDisplay" readonly placeholder="0" />
-        <div class="calc-grid" id="calcGrid"></div>
-      </div>
-    </section>
+    <section class="window small" id="calc"><div class="panel-header"><h2>Kalkulator ARGO</h2><button class="close-button" data-close="calc">×</button></div><div class="card"><input class="calc-display" id="calcDisplay" readonly placeholder="0" /><div class="calc-grid" id="calcGrid"></div></div></section>
+    <section class="window small" id="files"><div class="panel-header"><h2>Magazyn plików</h2><button class="close-button" data-close="files">×</button></div><div class="files-box"><label class="drop-zone" for="fileInput">Kliknij, aby dodać pliki<input id="fileInput" type="file" multiple /></label><div class="file-list" id="fileList"></div></div></section>
+    <section class="window small" id="calendar"><div class="panel-header"><h2>Kalendarz</h2><button class="close-button" data-close="calendar">×</button></div><div class="card"><input id="eventInput" style="width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:white;" placeholder="Dodaj wydarzenie i naciśnij Enter" /><div class="file-list" id="eventList" style="margin-top:12px;"></div></div></section>
 
-    <section class="window small" id="files">
-      <div class="panel-header"><h2>Magazyn plików</h2><button class="close-button" data-close="files">×</button></div>
-      <div class="files-box">
-        <label class="drop-zone" for="fileInput">Kliknij, aby dodać pliki<input id="fileInput" type="file" multiple /></label>
-        <div class="file-list" id="fileList"></div>
-      </div>
-    </section>
-
-    <section class="window small" id="calendar">
-      <div class="panel-header"><h2>Kalendarz</h2><button class="close-button" data-close="calendar">×</button></div>
-      <div class="card">
-        <input id="eventInput" style="width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:white;" placeholder="Dodaj wydarzenie i naciśnij Enter" />
-        <div class="file-list" id="eventList" style="margin-top:12px;"></div>
-      </div>
-    </section>
-
-    <div class="modal" id="modal">
-      <div class="modal-card" style="position:relative;">
-        <button class="modal-close" id="modalClose">×</button>
-        <h3>Dystrybucja</h3>
-        <p><strong>Model:</strong> ARGO DOCTUS</p>
-        <p><strong>Dystrybutor:</strong> Przemysław Broda</p>
-      </div>
-    </div>
+    <div class="modal" id="modal"><div class="modal-card"><button class="modal-close" id="modalClose">×</button><h3>Dystrybucja</h3><p><strong>Model:</strong> ARGO DOCTUS</p><p><strong>Dystrybutor:</strong> Przemysław Broda</p></div></div>
 
     <div class="auth-shell" id="authShell">
       <div class="auth-card">
@@ -294,21 +167,14 @@
         <input id="authPassword" type="password" placeholder="Hasło" />
         <button id="authActionBtn">Zaloguj</button>
         <div class="auth-status" id="authStatus"></div>
-        <div class="auth-row">
-          <span id="authText">Nie masz konta?</span>
-          <button id="switchAuthMode" type="button">Utwórz je</button>
-        </div>
+        <div class="auth-row"><span id="authText">Nie masz konta?</span><button id="switchAuthMode" type="button">Utwórz je</button></div>
       </div>
     </div>
 
     <script type="module">
       import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-      import { 
-        getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged
-      } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
-      import {
-        getFirestore, collection, addDoc, query, where, orderBy, onSnapshot, doc, setDoc, getDoc, serverTimestamp, deleteDoc
-      } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+      import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, deleteDoc, doc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
       import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js';
 
       const firebaseConfig = {
@@ -326,19 +192,19 @@
       const db = getFirestore(app);
       const storage = getStorage(app);
 
+      let currentUser = null;
+      let currentFiles = [];
+      let currentEvents = [];
+
       const authShell = document.getElementById('authShell');
       const authTitle = document.getElementById('authTitle');
       const authEmail = document.getElementById('authEmail');
       const authPassword = document.getElementById('authPassword');
       const authActionBtn = document.getElementById('authActionBtn');
       const authStatus = document.getElementById('authStatus');
-      const switchAuthModeBtn = document.getElementById('switchAuthMode');
       const authText = document.getElementById('authText');
-
+      const switchAuthModeBtn = document.getElementById('switchAuthMode');
       let isRegisterMode = false;
-      let currentUser = null;
-      let currentFiles = [];
-      let currentEvents = [];
 
       function setAuthStatus(message, isError = false) {
         authStatus.textContent = message;
@@ -353,37 +219,32 @@
         switchAuthModeBtn.textContent = isRegisterMode ? 'Zaloguj się' : 'Utwórz je';
       }
 
-      function handleAuthAction() {
+      authActionBtn.addEventListener('click', async () => {
         const email = authEmail.value.trim();
         const password = authPassword.value.trim();
-
         if (!email || !password) {
-          setAuthStatus('Wpisz e-mail i hasło.', true);
-          return;
+          setAuthStatus('Wpisz e-mail i hasło.', true); return;
         }
 
         setAuthStatus('Przetwarzanie...');
-
-        const action = isRegisterMode ? createUserWithEmailAndPassword(auth, email, password) : signInWithEmailAndPassword(auth, email, password);
-
-        action.then(() => {
-          setAuthStatus('Pomyślnie zalogowano.');
+        try {
+          if (isRegisterMode) {
+            await createUserWithEmailAndPassword(auth, email, password);
+          } else {
+            await signInWithEmailAndPassword(auth, email, password);
+          }
           authEmail.value = '';
           authPassword.value = '';
-        }).catch(error => {
-          setAuthStatus(error.message || 'Błąd uwierzytelniania.', true);
-        });
-      }
+          setAuthStatus('Pomyślnie zalogowano.');
+        } catch (error) {
+          setAuthStatus(error.message, true);
+        }
+      });
 
-      authActionBtn.addEventListener('click', handleAuthAction);
       switchAuthModeBtn.addEventListener('click', () => {
         toggleAuthMode();
         setAuthStatus('');
       });
-
-      async function signOutUser() {
-        await signOut(auth);
-      }
 
       function renderFiles(files) {
         const list = document.getElementById('fileList');
@@ -391,7 +252,6 @@
           list.innerHTML = '<div style="color:#94a3b8; font-size:12px;">Brak plików w magazynie.</div>';
           return;
         }
-
         list.innerHTML = files.map(file => `
           <div class="file-item">
             <div class="file-name">${file.name}</div>
@@ -428,7 +288,6 @@
           list.innerHTML = '<div style="color:#94a3b8; font-size:12px;">Brak wydarzeń.</div>';
           return;
         }
-
         list.innerHTML = events.map(event => `
           <div class="file-item">
             <div class="file-name">${event.text}</div>
@@ -443,15 +302,15 @@
         });
       }
 
-      async function loadUserData(uid) {
+      function loadUserData(uid) {
         const filesQuery = query(collection(db, 'users', uid, 'files'), orderBy('createdAt', 'desc'));
-        onSnapshot(filesQuery, (snapshot) => {
+        onSnapshot(filesQuery, snapshot => {
           currentFiles = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
           renderFiles(currentFiles);
         }, () => renderFiles([]));
 
         const eventsQuery = query(collection(db, 'users', uid, 'events'), orderBy('createdAt', 'desc'));
-        onSnapshot(eventsQuery, (snapshot) => {
+        onSnapshot(eventsQuery, snapshot => {
           currentEvents = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
           renderEvents(currentEvents);
         }, () => renderEvents([]));
@@ -459,11 +318,11 @@
 
       document.getElementById('fileInput').addEventListener('change', async (event) => {
         if (!currentUser) return;
-        const filesToUpload = Array.from(event.target.files || []);
-
-        for (const file of filesToUpload) {
-          const fileRef = ref(storage, `users/${currentUser.uid}/files/${Date.now()}_${file.name}`);
-          const upload = await uploadBytes(fileRef, file);
+        const list = Array.from(event.target.files || []);
+        for (const file of list) {
+          const path = `users/${currentUser.uid}/files/${Date.now()}_${file.name}`;
+          const storageRef = ref(storage, path);
+          const upload = await uploadBytes(storageRef, file);
           const url = await getDownloadURL(upload.ref);
           await addDoc(collection(db, 'users', currentUser.uid, 'files'), {
             name: file.name,
@@ -473,16 +332,15 @@
             createdAt: serverTimestamp()
           });
         }
-
         event.target.value = '';
       });
 
       document.getElementById('eventInput').addEventListener('keydown', async (event) => {
         if (event.key === 'Enter') {
-          const value = event.target.value.trim();
-          if (!value || !currentUser) return;
+          const text = event.target.value.trim();
+          if (!text || !currentUser) return;
           await addDoc(collection(db, 'users', currentUser.uid, 'events'), {
-            text: value,
+            text,
             createdAt: serverTimestamp()
           });
           event.target.value = '';
@@ -498,68 +356,44 @@
         } else {
           authShell.classList.remove('hidden');
           document.querySelectorAll('.app-item').forEach(btn => btn.disabled = true);
-          currentFiles = [];
-          currentEvents = [];
           renderFiles([]);
           renderEvents([]);
         }
       });
 
-      document.getElementById('distribution').addEventListener('click', () => {
-        const modal = document.getElementById('modal');
-        modal.classList.add('active');
-      });
-      document.getElementById('modalClose').addEventListener('click', () => {
-        document.getElementById('modal').classList.remove('active');
-      });
+      document.getElementById('distribution').addEventListener('click', () => document.getElementById('modal').classList.add('active'));
+      document.getElementById('modalClose').addEventListener('click', () => document.getElementById('modal').classList.remove('active'));
       document.getElementById('modal').addEventListener('click', (event) => {
         if (event.target.id === 'modal') event.target.classList.remove('active');
       });
 
-      function clock() {
-        const now = new Date();
-        document.getElementById('date').textContent = new Intl.DateTimeFormat('pl-PL', {
-          weekday: 'long', day: '2-digit', month: 'long', year: 'numeric'
-        }).format(now);
-        document.getElementById('time').textContent = new Intl.DateTimeFormat('pl-PL', {
-          hour: '2-digit', minute: '2-digit', second: '2-digit'
-        }).format(now);
-      }
-      clock(); setInterval(clock, 1000);
-
-      const windows = {
-        chat: document.getElementById('chat'),
-        calc: document.getElementById('calc'),
-        files: document.getElementById('files'),
-        calendar: document.getElementById('calendar')
-      };
-      function openWindow(name) {
-        Object.entries(windows).forEach(([key, panel]) => panel.classList.toggle('active', key === name));
-      }
-      document.querySelectorAll('[data-window]').forEach(btn => btn.addEventListener('click', () => openWindow(btn.dataset.window)));
+      const windows = { chat: document.getElementById('chat'), calc: document.getElementById('calc'), files: document.getElementById('files'), calendar: document.getElementById('calendar') };
+      document.querySelectorAll('[data-window]').forEach(btn => btn.addEventListener('click', () => {
+        Object.entries(windows).forEach(([key, panel]) => panel.classList.toggle('active', key === btn.dataset.window));
+      }));
       document.querySelectorAll('[data-close]').forEach(btn => btn.addEventListener('click', () => windows[btn.dataset.close].classList.remove('active')));
 
       const calcGrid = document.getElementById('calcGrid');
       const calcDisplay = document.getElementById('calcDisplay');
-      ['7','8','9','/','C','4','5','6','*','(','1','2','3','-',')','0','.','+','=','%'].forEach(value => {
+      ['7','8','9','/','C','4','5','6','*','(','1','2','3','-',' )','0','.','+','=','%'].forEach(val => {
         const btn = document.createElement('button');
-        btn.textContent = value;
+        btn.textContent = val.trim();
         btn.addEventListener('click', () => {
-          if (value === 'C') {
+          if (val === 'C') {
             calcDisplay.value = '';
             return;
           }
-          if (value === '=') {
+          if (val === '=') {
             try {
-              const expression = calcDisplay.value.replace(/÷/g,'/').replace(/×/g,'*');
-              const result = Function('return (' + expression + ')')();
+              const expr = calcDisplay.value.replace(/÷/g, '/').replace(/×/g, '*');
+              const result = Function('return (' + expr + ')')();
               calcDisplay.value = Number.isFinite(result) ? Number(result.toFixed(10)) : 'Błąd';
             } catch {
               calcDisplay.value = 'Błąd';
             }
             return;
           }
-          calcDisplay.value += value;
+          calcDisplay.value += val;
         });
         calcGrid.appendChild(btn);
       });
@@ -616,6 +450,13 @@
           document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
         }, 250);
       });
+
+      function clock() {
+        const now = new Date();
+        document.getElementById('date').textContent = new Intl.DateTimeFormat('pl-PL', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' }).format(now);
+        document.getElementById('time').textContent = new Intl.DateTimeFormat('pl-PL', { hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(now);
+      }
+      clock(); setInterval(clock, 1000);
     </script>
   </body>
 </html>
